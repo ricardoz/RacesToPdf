@@ -1,0 +1,22 @@
+2013-01-04 17:45:25.235+0000: Creating new db @ test117\neostore
+2013-01-04 17:45:25.725+0000: Non clean shutdown detected on log [test117\nioneo_logical.log.1]. Recovery started ...
+2013-01-04 17:45:25.732+0000: Tried to do recovery on log with illegal format version Invalid log format version found, expected 1 but was 2. To be able to upgrade from an older log format version there must have been a clean shutdown of the database
+org.neo4j.kernel.impl.transaction.xaframework.IllegalLogFormatException: Invalid log format version found, expected 1 but was 2. To be able to upgrade from an older log format version there must have been a clean shutdown of the database
+	at org.neo4j.kernel.impl.transaction.xaframework.LogIoUtils.readLogHeader(LogIoUtils.java:55)
+	at org.neo4j.kernel.impl.transaction.xaframework.XaLogicalLog.readLogHeader(XaLogicalLog.java:1331)
+	at org.neo4j.kernel.impl.transaction.xaframework.XaLogicalLog.doInternalRecovery(XaLogicalLog.java:768)
+	at org.neo4j.kernel.impl.transaction.xaframework.XaLogicalLog.open(XaLogicalLog.java:238)
+	at org.neo4j.kernel.impl.transaction.xaframework.XaLogicalLog.open(XaLogicalLog.java:142)
+	at org.neo4j.kernel.impl.transaction.xaframework.XaContainer.openLogicalLog(XaContainer.java:97)
+	at org.neo4j.kernel.impl.nioneo.xa.NeoStoreXaDataSource.<init>(NeoStoreXaDataSource.java:147)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.neo4j.kernel.impl.transaction.XaDataSourceManager.create(XaDataSourceManager.java:75)
+	at org.neo4j.kernel.impl.transaction.TxModule.registerDataSource(TxModule.java:147)
+	at org.neo4j.kernel.GraphDbInstance.start(GraphDbInstance.java:112)
+	at org.neo4j.kernel.EmbeddedGraphDbImpl.<init>(EmbeddedGraphDbImpl.java:190)
+	at org.neo4j.kernel.EmbeddedGraphDatabase.<init>(EmbeddedGraphDatabase.java:80)
+	at org.neo4j.kernel.EmbeddedGraphDatabase.<init>(EmbeddedGraphDatabase.java:64)
+	at itext.RacePdfWriter.main(RacePdfWriter.java:318)
